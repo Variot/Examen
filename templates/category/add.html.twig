@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    {#{{form(form)}}#}
+
+    {{ form_start(form) }}
+
+    {{ form_row(form._token) }}
+
+    {{ form_label(form.name, 'Nom de la catégorie') }}
+    {{ form_widget(form.name,{'attr':{'maxlength':'50'}}) }}
+
+    {{ form_label(form.description, 'Description') }}
+    {{ form_widget(form.description,{'attr':{'maxlength':'50'}}) }}
+
+    {{ form_label(form.slug, 'Slug') }}
+    {{ form_widget(form.slug,{'attr':{'maxlength':'50'}}) }}
+
+    {{ form_label(form.save, 'Ajouter une catégorie') }}
+    {{ form_widget(form.save) }}
+
+    {{ form_end(form, { 'render_rest': false}) }}
+
+</div>
+{% endblock %}

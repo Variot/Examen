@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil du Site{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="row">
+
+
+        {% for product in listeProduits %}
+
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{product.img}}" alt="{{product.name}}" height="250">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.price}}</p>
+                    <a href=" {{ path('admin_detailProduit', {id: product.id}) }}" class="btn btn-primary">Voir
+                        détail</a>
+                </div>
+            </div>
+            </br>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+</div>
+{% endblock %}
